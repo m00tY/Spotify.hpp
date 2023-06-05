@@ -7,7 +7,7 @@ using namespace std;
 
 class EnvFile {
     private:
-    std::ifstream file;
+    ifstream file;
     
     string filePath;
     map<string, string> envContents;
@@ -15,7 +15,7 @@ class EnvFile {
     map<string, string> envToMap(string filePath) {
         file.open(filePath);
         if (!file) {
-            throw "could not open file";
+            throw "Could not open file.";
         }
 
         string line;
@@ -29,7 +29,7 @@ class EnvFile {
     }
     
     //input should only be one line, while loop is jank but works
-    std::pair<string, string> breakAtEquals(string text) {
+    pair<string, string> breakAtEquals(string text) {
         string key;
         string value;
         
@@ -39,7 +39,7 @@ class EnvFile {
             key = text.substr(0, pos);
             value = text.substr(pos+1, text.length());
         }
-        return std::make_pair(key, value);
+        return make_pair(key, value);
     }
     
     public:
