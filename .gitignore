@@ -34,5 +34,4 @@
 
 # other stuff i dont want to deal with
 *.env
-.*gitattributes
 .vscode
